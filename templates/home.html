@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/saver" method="POST">
+        手机：
+        <input type="text" name="phone"/>
+        <br/>
+
+        {{captcha.captcha.errors}}
+        {{captcha.captcha}}
+        <input type="button" value="发送验证码" class="send-verify">
+        <br/>
+
+        <input type="submit" value="提交">
+
+    </form>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js">
+
+    </script>
+</body>
+</html>

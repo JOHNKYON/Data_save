@@ -15,13 +15,14 @@ Including another URLconf
 """
 
 # here's a test of github account
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
-
-import saver
+import view
 
 urlpatterns = [
+    url(r'^captcha/', include('captcha.urls')),
+    url(r'^captcha_verify/', view.captcha_verify),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', saver.test_transfer),
-    url(r'^saver$', saver.parameter_saver),
+    url(r'^$', view.home),
+    url(r'^saver$', view.parameter_saver),
 ]
